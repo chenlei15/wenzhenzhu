@@ -1,0 +1,22 @@
+<h1>珍珠 | 陈镭 日记</h1>
+<div class = "bg">  <img  src="/assets/slp.jpg"/>
+  <img  src="/assets/wzz.jpg"/>
+</div>
+<% @i = @diaries.count-1 %>
+  <%  while @i >= 0 %>
+    <div class = "tex">
+    <h1><%= @diaries[@i].title %></h1>
+    <h3><%= @diaries[@i].date %><br>
+    <h3><%= @diaries[@i].body %></h3>
+    <%= link_to '详情', @diaries[@i] ,class: "edit" %>
+    <%= link_to '编辑', edit_diary_path(@diaries[@i]),class: "edit" %>
+    <%= link_to '删除', @diaries[@i],class: "edit",method: :delete, data: { confirm: '你确定吗?' } %>
+    <% @i = @i-1 %>
+    </div>
+ 
+    <% end %>
+<br>
+
+<%= link_to '开始写新的日记，嗷嗷', new_diary_path,type:"button", class: "btn btn-success",id:"btword" %>
+
+
