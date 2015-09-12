@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150912074720) do
     t.text     "body"
     t.date     "date"
     t.integer  "user_id"
+    t.string   "user_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
